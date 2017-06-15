@@ -10,12 +10,13 @@ kochi@chromium.org
 ### Summary
 Currently stylesheets in HTML Imports (via either inline `<style>` or external `<link rel="stylesheet">`) is applied to their master document. Deprecate and eventually remove this behavior.
 Eventually we can remove the [chapter 9 of HTML imports spec](http://w3c.github.io/webcomponents/spec/imports/#style-imports).
-Current plan is to start showing deprecation message in 61 and remove in 65 (Mar. 2018).
+Current plan is to start showing deprecation message in 61 (Sep. 2017) and remove in 65 (Mar. 2018).
 
 Note: stylesheets defined within `<template>` element, which is often used for stamping Shadow DOM contents, are not affected, as they are never applied to anything until they are stamped.
 
 ### Spec
 The whole section of style in HTML Imports spec will be removed:
+
 http://w3c.github.io/webcomponents/spec/imports/#style-imports
 
 > The contents of the style elements and the external resources of the link elements in import
@@ -23,6 +24,7 @@ http://w3c.github.io/webcomponents/spec/imports/#style-imports
 > document.
 
 A reference PR for removing this section:
+
 https://github.com/w3c/webcomponents/pull/642
 
 ### Motivation
@@ -30,12 +32,12 @@ Applying style from stylesheets in HTML Imports (via `<script>` or `<link rel="s
 
 This was originally introduced for giving "default style" for something in modular way, such as theming using HTML imports. But as `/deep/` and `::shadow` combinators of Shadow DOM v0 are deprecated and they are not even available in Shadow DOM v1, the value of this feature has become smaller.
 
-Removing this will reduce the complexity which historically caused difficulty in making changes in style system (e.g. see crbug.com/567021 or crbug.com/717506).
+Removing this will reduce the complexity which historically caused difficulty in making changes in style system (e.g. see [crbug/567021](http://crbug.com/567021) or [crbug/717506](http://crbug.com/717506)).
 
 We will eventually be deprecating HTML imports as a whole once a concrete successor gets consensus; Deprecating the style application part is a stepping stone for it.
 
 ### Interoperability and Compatibility Risk
-HTML Imports has been available only for Blink, and the stylesheet usage in imports is 0.044% ([source](https://www.chromestatus.com/metrics/feature/timeline/popularity/940)) within the whole HTML Imports usage (0.411%, [source](https://www.chromestatus.com/metrics/feature/timeline/popularity/455)), so currently 10+% of HTML import contains one or more stylesheets, although we do not have concrete data about how much of them are actually styling the master document.
+HTML Imports has been available only for Blink, and as of this writing (May 29, 2017) the stylesheet usage in imports is 0.044% ([source](https://www.chromestatus.com/metrics/feature/timeline/popularity/940)) within the whole HTML Imports usage (0.411%, [source](https://www.chromestatus.com/metrics/feature/timeline/popularity/455)), so currently 10+% of HTML import contains one or more stylesheets, although we do not have concrete data about how much of them are actually styling the master document.
 
 As no other browsers than Chrome and Opera shipped HTML Imports, compatibility risk is only within Blink implementation and its users.
 
