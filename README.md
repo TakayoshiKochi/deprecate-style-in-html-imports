@@ -4,9 +4,9 @@ This repository contains examples for mitigating deprecation of style applicatio
 
 ## Examples
 
-- example 1 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex1), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/ex1/master.html))
+- example 1 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex1), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex1/master.html))
 
-If a style is in an import,
+If a style that applies to the master document is in an import,
 ```html
 <!DOCTYPE html>
 <style>
@@ -16,9 +16,9 @@ If a style is in an import,
 </style>
 ```
 
-One obvious way to fix this is just move the content in the master document.
+One obvious way to fix this is just move the stylesheet content to the master document manually.
 
-Here's a script snippet that should run inside the same import, which will hoist the stylesheet to the master document.
+Here's a script snippet that should run inside the same import, which will hoist the stylesheet to the master document, in case the master document cannot be modified.
 
 ```html
 <script>
@@ -28,16 +28,20 @@ document.head.appendChild(style);
 </script>
 ```
 
-- example 2 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex2), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/ex2/master.html))
+See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex1/master.html).
+
+- example 2 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex2), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex2/master.html))
 
 If `<link rel=stylesheet href=...>` is used in HTML Imports, the same strategy as example 1 can be used.
 
-- example 3 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex3), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/ex3/master.html))
+See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex2/master.html).
+
+- example 3 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex3), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex3/master.html))
 
 
 
-## Intent to Deprecate ([original mail with discussion](https://groups.google.com/a/chromium.org/d/topic/blink-dev/VZraFwqnp9Y/discussion))
-
+## Intent to Deprecate
+[original mail with discussion](https://groups.google.com/a/chromium.org/d/topic/blink-dev/VZraFwqnp9Y/discussion)
 ### Primary eng email
 kochi@chromium.org
 
