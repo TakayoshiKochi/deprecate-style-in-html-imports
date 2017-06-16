@@ -38,6 +38,13 @@ See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-h
 
 - example 3 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex3), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex3/master.html))
 
+- feature detection (by coutesy of PhistucK)
+
+```
+<link rel=import
+      href="data:text/html,<style>body{--style-imported-detection:1;}</style>"
+	  onload="console.log('<style> moved?', getComputedStyle(document.body).getPropertyValue('--style-imported-detection') === '1')"/>
+```
 
 
 ## Intent to Deprecate
