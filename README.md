@@ -101,8 +101,12 @@ See https://github.com/TakayoshiKochi/deprecate-style-in-html-imports for more
 concrete examples.
 
 For Polymer (both 1.x and 2.x) users, custom-style usage is affected by this.
-The framework will be updated to handle this accordingly.
-Follow https://github.com/Polymer/polymer/issues/4679 for the details.
+In the latest versions of Polymer 1.x and 2.x, the custom-style element has 
+been updated to move its styles into the main document.
+
+1.x users should update to Polymer 1.10.1 or newer, and 2.x users should update to 
+2.1.1 or newer to take advantage of the fix.
+See https://github.com/Polymer/polymer/issues/4679 for the details.
 
 ### Usage information from UseCounter
 https://www.chromestatus.com/metrics/feature/timeline/popularity/940
