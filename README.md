@@ -71,7 +71,7 @@ function findStylesheetsInImportedDocs(doc, map) {
 }
 console.log(findStylesheetsInImportedDocs(document));
 ```
-available as a [gist](javascript:(function(){var%20screl=document.createElement('script');screl.setAttribute('type','text/javascript');screl.setAttribute('src','https://gist.githubusercontent.com/tomalec/47f0acd910a729d0b6a2e55061e5c26e/raw/4843f8a32d971f0465871a2d26cf6cc5c88e1229/findStylesheetsInAllHTMLImports.js');document.body.appendChild(screl);})();) or as a "<a href="javascript:(function(){var%20screl=document.createElement('script');screl.setAttribute('type','text/javascript');screl.setAttribute('src','https://gist.githubusercontent.com/tomalec/47f0acd910a729d0b6a2e55061e5c26e/raw/4843f8a32d971f0465871a2d26cf6cc5c88e1229/findStylesheetsInAllHTMLImports.js');document.body.appendChild(screl);})();">Find styles in HTML Imports bookmarklet</a>"
+available as a [gist](https://gist.github.com/tomalec/47f0acd910a729d0b6a2e55061e5c26e)
 
 
 ## Intent to Deprecate
