@@ -46,6 +46,33 @@ See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-h
 	  onload="console.log('<style> moved?', getComputedStyle(document.body).getPropertyValue('--style-imported-detection') === '1')"/>
 ```
 
+#### Snippet to find problematic styles on given page
+
+To find all problematic imports and stylesheets you can use following snippet.
+```js
+function findStylesheetsInImportedDocs(doc, map) {
+    map = map || {};
+    // map = map || new Map();
+    Array.prototype.forEach.call(doc.querySelectorAll('link[rel=import]'), (e) => {
+        const importedDoc = e.import;
+        if (importedDoc && !map[importedDoc]) {
+            const styles = importedDoc.querySelectorAll('style,link[rel=stylesheet]');
+            if (styles.length) {
+                map[importedDoc.URL] = {
+                    doc: importedDoc,
+                    styles: styles
+                };
+                // map.set(importedDoc, styles);
+            }
+            findStylesheetsInImportedDocs(importedDoc, map)
+        }
+    });
+    return map;
+}
+console.log(findStylesheetsInImportedDocs(document));
+```
+available as a [gist](https://gist.github.com/tomalec/47f0acd910a729d0b6a2e55061e5c26e)
+
 
 ## Intent to Deprecate
 [original mail with discussion](https://groups.google.com/a/chromium.org/d/topic/blink-dev/VZraFwqnp9Y/discussion)
