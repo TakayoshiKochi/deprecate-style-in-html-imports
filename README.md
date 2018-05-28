@@ -28,7 +28,7 @@ document.head.appendChild(style);
 </script>
 ```
 
-See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex1/master.html).
+See [fixed code in action](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex1/master-fixed.html).
 
 - example 2 ([code](https://github.com/TakayoshiKochi/deprecate-style-in-html-imports/tree/master/examples/ex2), [live demo](https://takayoshikochi.github.io/deprecate-style-in-html-imports/examples/ex2/master.html))
 
